@@ -16,7 +16,7 @@ class AssignTicketView(Toplevel):
     def __init__(self, master, ticket: Ticket, current_user: Users, on_assigned=None) -> None:
         super().__init__(master)
         self.title("Назначение заявки")
-        self.geometry("400x200")
+        self.geometry("400x100")
         self.resizable(width=False, height=False)
 
         self.ticket = ticket
@@ -45,13 +45,7 @@ class AssignTicketView(Toplevel):
         frame = ttk.Frame(self)
         frame.pack(fill="both", expand=True, padx=10, pady=10)
 
-        ttk.Label(frame, text=f"Заявка #{self.ticket.id}:").grid(
-            row=0,
-            column=0,
-            columnspan=2,
-            sticky="w",
-            **padding,
-        )
+
 
         ttk.Label(frame, text="Выберите специалиста:").grid(
             row=1,
